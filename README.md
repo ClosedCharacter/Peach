@@ -1,15 +1,3 @@
----
-license: apache-2.0
-language:
-- zh
-- en
-pipeline_tag: text-generation
-tags:
-- roleplay
-- rp
-- character
----
-
 <!-- header start -->
 <!-- 200823 -->
 <div style="width: auto; margin-left: auto; margin-right: auto">
@@ -19,8 +7,10 @@ tags:
 
 # Peach-9B-8k-Roleplay
 
-Peach-9B-8k-Roleplay is a chat large language model obtained by finetuning [01-ai/Yi-1.5-9B](https://huggingface.co/01-ai/Yi-1.5-9B) model on more than 100K conversations created through our data synthesis approach. 
+Peach-9B-8k-Roleplay is a chat large language model obtained by finetuning [01-ai/Yi-1.5-9B](https://huggingface.co/01-ai/Yi-1.5-9B) model on more than 100K conversations created through our data synthesis approach.
+
  🤗 <a href="https://huggingface.co/ClosedCharacter/Peach-9B-8k-Roleplay" target="_blank">HF Repo</a>
+ 
 **Maybe The Best LLM with Small Parameters under 34B**
 
 ## How to start
