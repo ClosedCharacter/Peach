@@ -28,7 +28,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_name_or_path = "ClosedCharacter/Peach-9B-8k-Roleplay"
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, use_fast=True, return_tensors="pt")
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, use_fast=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name_or_path, torch_dtype=torch.bfloat16, 
     trust_remote_code=True, device_map="auto")
@@ -36,9 +36,9 @@ messages = [
     {"role": "system", "content": "你是黑丝御姐"},
     {"role": "user", "content": "你好，你是谁"},
 ]
-input_ids = tokenizer.apply_chat_template(conversation=messages, tokenize=True)
+input_ids = tokenizer.apply_chat_template(conversation=messages, tokenize=True, return_tensors="pt")
 output = model.generate(
-    inputs=input_ids, 
+    inputs=input_ids.to("cuda"), 
     temperature=0.3, 
     top_p=0.5, 
     no_repeat_ngram_size=6,
